@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://4d-game.github.io/SDK/</loc>
+         <loc>https://4d-game.github.io/sdk/</loc>
          <lastmod>2021-12-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://4d-game.github.io/SDK/game-sdk/</loc>
+         <loc>https://4d-game.github.io/sdk/game-sdk/</loc>
          <lastmod>2021-12-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://4d-game.github.io/SDK/game-sdk/config-file/</loc>
+         <loc>https://4d-game.github.io/sdk/game-sdk/config-file/</loc>
          <lastmod>2021-12-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://4d-game.github.io/SDK/game-sdk/key-maps/</loc>
+         <loc>https://4d-game.github.io/sdk/game-sdk/key-maps/</loc>
          <lastmod>2021-12-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://4d-game.github.io/SDK/game-sdk/code-references/game-io/</loc>
+         <loc>https://4d-game.github.io/sdk/game-sdk/code-references/game-io/</loc>
          <lastmod>2021-12-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://4d-game.github.io/SDK/game-sdk/code-references/game/</loc>
+         <loc>https://4d-game.github.io/sdk/game-sdk/code-references/game/</loc>
          <lastmod>2021-12-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://4d-game.github.io/SDK/gamecontrol-sdk/</loc>
+         <loc>https://4d-game.github.io/sdk/gamecontrol-sdk/</loc>
          <lastmod>2021-12-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://4d-game.github.io/SDK/gamecontrol-sdk/config-file/</loc>
+         <loc>https://4d-game.github.io/sdk/gamecontrol-sdk/config-file/</loc>
          <lastmod>2021-12-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://4d-game.github.io/SDK/gamecontrol-sdk/code-references/game-io/</loc>
+         <loc>https://4d-game.github.io/sdk/gamecontrol-sdk/code-references/game-io/</loc>
          <lastmod>2021-12-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://4d-game.github.io/SDK/gamecontrol-sdk/code-references/game/</loc>
+         <loc>https://4d-game.github.io/sdk/gamecontrol-sdk/code-references/game/</loc>
          <lastmod>2021-12-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://4d-game.github.io/SDK/gamecontrol-sdk/code-references/players/</loc>
+         <loc>https://4d-game.github.io/sdk/gamecontrol-sdk/code-references/players/</loc>
          <lastmod>2021-12-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
