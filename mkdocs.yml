@@ -1,5 +1,5 @@
 site_name: Crazy Comet - Gamecontrol
-site_url: https://4d-game.github.io/Gamecontrol
+site_url: https://4d-game.github.io/sdk
 
 nav:
   - Home: https://4d-game.github.io
@@ -22,11 +22,10 @@ nav:
           - Code References:
               - Game: gamecontrol-sdk/code-references/game.md
               - GameIO: gamecontrol-sdk/code-references/game-io.md
-
   - Hardware: https://4d-game.github.io/Hardware
 
-repo_url: https://github.com/4D-Game/SDK
-repo_name: 4D-Game/Gamecontrol
+repo_url: https://github.com/4D-Game/sdk
+repo_name: 4D-Game/SDK
 
 theme:
   name: material
@@ -52,8 +51,8 @@ plugins:
   - search
   - mkdocstrings:
       watch:
-        - lib/gamecontrol_sdk
-        - src
+        - gamecontrol_sdk
+        - game_sdk
   - mermaid2:
       arguments:
         theme: 'dark'
