@@ -82,11 +82,8 @@ class Game:
             (Private) Executed, when the game ends
         """
 
-        for control in self.controls:
-            if issubclass(type(control), Switch):
-                asyncio.create_task(control.off(self.config['seat']))
-            elif issubclass(type(control), Joystick):
-                asyncio.create_task(control.set_direction(self.config['seat'], 0))
+        for _, control in self.controls.items():
+            await control.reset(self.config['seat'])
 
         await self.on_end()
 
@@ -104,7 +101,7 @@ class Game:
 
         self._on_exit()
 
-    def _on_exit(self, err: Exception = None):
+    async def _on_exit(self, err: Exception = None):
         """
             (Private) Executed, when the game loop is exited
 
@@ -112,15 +109,12 @@ class Game:
                 err: Value of the exception when the game exited with none zero code
         """
 
-        for control in self.controls:
-            if issubclass(type(control), Switch):
-                asyncio.run(control.off(self.config['seat']))
-            elif issubclass(type(control), Joystick):
-                asyncio.run(control.set_direction(self.config['seat'], 0))
+        for _, control in self.controls.items():
+            await control.close(self.config['seat'])
 
-        self.on_exit(err)
+        await self.on_exit(err)
 
-    def on_exit(self, err: Exception = None):
+    async def on_exit(self, err: Exception = None):
         """
             Executed, when the game loop is exited
 
@@ -207,7 +201,6 @@ class Game:
 
             #  try:
             await main_loop
-            self._on_exit()
             # except Exception as err:
             #     self._on_exit(err)
 
@@ -235,4 +228,7 @@ class Game:
             loop = asyncio.get_event_loop()
             loop.run_until_complete(self._run(conf_path))
         except KeyboardInterrupt:
-            self._on_exit()
+            logging.info("Keyboard Interrupt")
+        finally:
+            loop = asyncio.get_event_loop()
+            loop.run_until_complete(self._on_exit())

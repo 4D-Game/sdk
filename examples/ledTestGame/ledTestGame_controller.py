@@ -9,9 +9,10 @@ from game_sdk.inputs import Switch
 
 LED_PIN = 17
 
+
 class LEDSwitch(Switch):
     def __init__(self, seat: int, name: str, score_cb: Callable = None):
-        
+
         # Initialize LED pin
         GPIO.setup(LED_PIN, GPIO.OUT)
         # Store reference to score callback function
@@ -22,11 +23,16 @@ class LEDSwitch(Switch):
         GPIO.output(LED_PIN, GPIO.HIGH)
         await self.score_cb()
 
-    async def off(self, seat=0): 
+    async def off(self, seat=0):
         GPIO.output(LED_PIN, GPIO.LOW)
 
-    async def shutdown(self, seat):
+    async def reset(self, seat=0):
+        await self.off(seat)
+
+    async def close(self, seat):
         # Set LED pin into safe state by setting it to input mode
+        await self.off(seat)
+        GPIO.setup(LED_PIN, GPIO.IN)
         GPIO.cleanup()
 
 
@@ -38,9 +44,9 @@ class LedTestGame(Game):
         await self.game_io.score(score=self.score, seat=self.config["seat"])
 
     async def on_init(self):
-        self.ready_control=KeyCode.BUT_1
+        self.ready_control = KeyCode.BUT_1
         # Register LED input with update score callback function
-        self.controls={KeyCode.BUT_0: LEDSwitch(self.config["seat"], 'LEDSwitch_1', self.update_score)}
+        self.controls = {KeyCode.BUT_0: LEDSwitch(self.config["seat"], 'LEDSwitch_1', self.update_score)}
 
     async def on_pregame(self):
         # Set score to 0 before game starts
@@ -50,4 +56,3 @@ class LedTestGame(Game):
 if __name__ == "__main__":
     # Start running the game
     LedTestGame().run()
-
