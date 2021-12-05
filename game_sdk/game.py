@@ -64,6 +64,16 @@ class Game:
 
         logging.info("ON INIT")
 
+    async def _on_pregame(self):
+        """
+            (Private) Executed, before a new game starts
+        """
+
+        for _, control in self.controls.items():
+            await control.init(self.config['seat'])
+
+        await self.on_pregame()
+
     async def on_pregame(self):
         """
             Executed, before a new game starts
@@ -163,7 +173,7 @@ class Game:
             self.game_state = game_state
 
             if game_state == GameState.START:
-                await self.on_pregame()
+                await self._on_pregame()
                 asyncio.create_task(self._game_io.ready(self.config['seat']))
             elif game_state == GameState.RUN:
                 await self.on_start()
