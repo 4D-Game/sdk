@@ -15,10 +15,10 @@ class JoystickCode(Enum):
     """
         Shortcuts for the joystick
     """
-    LEFT_Y = 0
-    LEFT_X = 1
-    RIGHT_Y = 2
-    RIGHT_X = 3
+    LEFT_Y = 10
+    LEFT_X = 11
+    RIGHT_Y = 12
+    RIGHT_X = 13
 
 
 class KeyCode(Enum):

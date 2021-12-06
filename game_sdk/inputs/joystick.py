@@ -29,11 +29,13 @@ class Joystick(Input):
     async def set_direction(self, seat: int, pos: int):
         mapped_pos = self._mapPosition(pos)
 
-        if ((- self.threshhold) < mapped_pos < (self.threshhold)) and (- self.threshhold) < self.last_pos < (self.threshhold):
-            return
-
         self.last_pos = mapped_pos
-        await self.get_direction(seat, mapped_pos)
+
+        if ((- self.threshhold) < mapped_pos < (self.threshhold)):
+            logging.debug("Threshold reached")
+            self.last_pos = 0
+
+        await self.get_direction(seat, self.last_pos)
 
     async def get_direction(self, seat: int, pos: float):
         """
