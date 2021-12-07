@@ -1,5 +1,5 @@
 import logging
-from game_sdk.key_map.gamepad import KeyCode
+from game_sdk.controller.key_map.gamepad import KeyCode
 from .input import Input
 
 
@@ -8,7 +8,7 @@ class Switch(Input):
         Class for button inputs
     """
 
-    keybind: KeyCode
+    key_bind: KeyCode
 
     def __init__(self, seat: int, name: str):
         """
@@ -17,7 +17,6 @@ class Switch(Input):
             Arguments:
                 seat: controller seat
                 name: controller name
-                keybind = controller buttons
         """
         super().__init__(seat, name)
 

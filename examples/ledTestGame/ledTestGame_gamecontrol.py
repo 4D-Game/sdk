@@ -1,7 +1,7 @@
 import logging
-from gamecontrol_sdk import Game
-from gamecontrol_sdk.game import LogLevel
-from gamecontrol_sdk.game_io import GameState
+from game_sdk.gamecontrol import Game
+from game_sdk.game import LogLevel
+from game_sdk.game_io import GameState
 
 
 class LedTestGame(Game):

@@ -2,15 +2,6 @@ from enum import Enum
 import logging
 
 
-class JoystickPos(Enum):
-    """
-        Different joystick positions
-    """
-
-    LEFT = 0
-    RIGHT = 1
-
-
 class JoystickCode(Enum):
     """
         Shortcuts for the joystick
@@ -58,7 +49,7 @@ class GamePad():
         self._key_map = key_map
         self._joystick_map = joystick_map
 
-    def mapKey(self, code: int) -> Enum:
+    def map_key(self, code: int) -> Enum:
         """
             Get sdk-code for switch and joystick movements
 

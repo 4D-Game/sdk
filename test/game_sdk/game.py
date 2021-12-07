@@ -1,13 +1,9 @@
 #!/usr/bin/env python3
 
-import logging
-from game_sdk import Game
+from game_sdk.controller import Game
 from game_sdk.game import LogLevel
-import asyncio
-from game_sdk.inputs.joystick import Joystick
-
-from game_sdk.inputs.switch import Switch
-from game_sdk.key_map.gamepad import JoystickCode, KeyCode
+from game_sdk.controller.inputs import Joystick, Switch
+from game_sdk.controller.key_map import JoystickCode, KeyCode
 
 
 class TestSwitch(Switch):

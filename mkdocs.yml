@@ -9,19 +9,31 @@ nav:
       - Gamecontrol: https://4d-game.github.io/Gamecontrol/
   - SDK:
       - Overview: index.md
-      - Game SDK:
-          - Structure: game-sdk/index.md
-          - Key Maps: game-sdk/key-maps.md
-          - Config File: game-sdk/config-file.md
+      - Structure: structure.md
+      - Controller:
+          - Structure: controller-sdk/index.md
+          - Key Maps: controller-sdk/key-maps.md
+          - Config File: controller-sdk/config-file.md
           - Code References:
-              - Game: game-sdk/code-references/game.md
-              - GameIO: game-sdk/code-references/game-io.md
-      - Gamecontrol SDK:
+              - Game: controller-sdk/code-references/game.md
+              - inputs:
+                  Input: controller-sdk/code-references/input.md
+                  Joystick: controller-sdk/code-references/joystick.md
+                  Switch: controller-sdk/code-references/switch.md
+              - key_map: controller-sdk/code-references/key_map.md
+      - Gamecontrol:
           - Structure: gamecontrol-sdk/index.md
           - Config File: gamecontrol-sdk/config-file.md
           - Code References:
               - Game: gamecontrol-sdk/code-references/game.md
-              - GameIO: gamecontrol-sdk/code-references/game-io.md
+      - Passive:
+          - Structure: passive-sdk/index.md
+          - Code References:
+              - Game: passive-sdk/code-references/game.md
+      - Code References:
+          - GameTemplate: code-references/game.md
+          - GameIO: code-references/game-io.md
+          - Players: code-references/players.md
   - Hardware: https://4d-game.github.io/Hardware
 
 repo_url: https://github.com/4D-Game/sdk
@@ -51,7 +63,6 @@ plugins:
   - search
   - mkdocstrings:
       watch:
-        - gamecontrol_sdk
         - game_sdk
   - mermaid2:
       arguments:

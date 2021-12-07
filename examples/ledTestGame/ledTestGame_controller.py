@@ -3,9 +3,9 @@ from typing import Callable
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 
-from game_sdk.key_map import KeyCode
-from game_sdk import Game
-from game_sdk.inputs import Switch
+from game_sdk.controller.key_map import KeyCode
+from game_sdk.controller import Game
+from game_sdk.controller.inputs import Switch
 
 LED_PIN = 17
 

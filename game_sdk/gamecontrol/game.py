@@ -5,44 +5,18 @@ from typing import Any, Coroutine, MutableMapping
 import toml
 
 from asyncio_mqtt.error import MqttError
+from game_sdk.game import GameTemplate
 
-from gamecontrol_sdk.game_io import GameIO, GameState
-from gamecontrol_sdk.players import Players
-
-
-class LogLevel(enum.Enum):
-    """
-        Different logging levels defiend by the logging module
-    """
-
-    CRITICAL = 50
-    ERROR = 40
-    WARNING = 30
-    INFO = 20
-    DEBUG = 10
-    NOTSET = 0
+from game_sdk.game_io import GameIO, GameState
+from game_sdk.players import Players
 
 
-class Game:
+class Game(GameTemplate):
     """
         Class to control the whole game. Inherit from this class and call `run()` to start your gamecontrol
     """
 
-    config: MutableMapping[str, Any]
     _players: Players
-    _is_running = False
-    _game_io: GameIO
-    _game_state = GameState.IDLE
-
-    @property
-    def game_io(self):
-        """
-           Instance of `GameIO` used to control the whole game loop
-        """
-
-        if self._is_running:
-            return self._game_io
-        raise Exception('Execute Game.run() before accessing game_io')
 
     @property
     def players(self):
@@ -73,48 +47,6 @@ class Game:
 
         asyncio.create_task(self._game_io.set_game_state(self._game_state))
 
-    async def on_init(self):
-        """
-            Executed, when the game is startet with `Game.run()`
-        """
-
-        logging.info("ON INIT")
-
-    async def on_pregame(self):
-        """
-            Executed, before a new game starts
-        """
-
-        logging.info("ON PREGAME")
-
-    async def on_start(self):
-        """
-            Executed, when a new game starts
-        """
-        logging.info("ON START")
-
-    async def on_end(self):
-        """
-            Executed, when the game ends
-        """
-
-        self._players.reset()
-
-        logging.info("ON END")
-
-    async def on_exit(self, err: Exception = None):
-        """
-            Executed, when the game loop is exited
-
-            Arguments:
-                err: Value of the exception when the game exited with none zero code
-        """
-
-        logging.info("ON EXIT")
-
-        if err:
-            logging.error(err)
-
     async def on_score(self):
         """
             Executed, when a player scores one or more points
@@ -130,7 +62,9 @@ class Game:
                 mqtt_conf: GameIO configuration
         """
 
-        async for topic, data in self._game_io.subscribe():
+        topic = [('status/ready', 0), ('score', 0)]
+
+        async for topic, data in self._game_io.subscribe(topic):
             logging.debug("Got Message from: %s with %s", topic, data)
 
             if (topic == "status/ready"):
@@ -138,7 +72,7 @@ class Game:
                 await self._ready()
             elif (topic == "score") and self._game_state is GameState.RUN:
                 self._players.set_score(data['seat'], data['score'])
-                await self.on_score()
+                asyncio.create_task(self.on_score())
 
     async def _ready(self):
         """
@@ -162,14 +96,11 @@ class Game:
 
             self._players.reset_ready()
 
-    async def _run(self, conf_path: str):
+    async def _run(self):
         """
             Asynchronous `run` function
         """
         try:
-            self.config = toml.load(conf_path)
-            logging.debug(self.config)
-
             self._players = Players(self.config['seats'])
 
             self._game_io = GameIO(self.config['MQTT'])
@@ -190,18 +121,3 @@ class Game:
         except MqttError:
             logging.error("Couldn't connect to MQTT Client")
             logging.error("MQTT Config: %s", self.config['MQTT'])
-        except FileNotFoundError:
-            logging.error("No config found at: %s", conf_path)
-
-    def run(self, conf_path: str = '/home/pi/Gamecontrol/config.toml', log_level: LogLevel = LogLevel.NOTSET):
-        """
-            Start the game engine
-
-            Arguments:
-                conf_path: Path to configuration.toml
-                log_level: logging level
-        """
-
-        logging.getLogger().setLevel(log_level.value)
-
-        asyncio.run(self._run(conf_path))

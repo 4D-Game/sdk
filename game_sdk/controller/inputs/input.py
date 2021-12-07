@@ -1,12 +1,8 @@
-from abc import ABC, abstractmethod
-
-
-class Input(ABC):
+class Input:
     """
         Base class for all user inputs
     """
 
-    @abstractmethod
     def __init__(self, seat: int, name: str):
         """
             Abstract init method

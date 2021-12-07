@@ -1,4 +1,4 @@
-# Class structure for Gamecontrol
+# Class structure for passive devices
 
 ```mermaid
 classDiagram
@@ -7,8 +7,8 @@ classDiagram
     +Players players
     +set_game_state(GameState: state)
     +on_score()
-    -game_io_sub()
-    -ready()
+    -game_io_ctlsub()
+    -game_io_statussub()
     -run()
   }
 ```

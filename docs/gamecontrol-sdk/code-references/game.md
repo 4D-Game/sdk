@@ -1,3 +1,3 @@
 # Game
 
-:::gamecontrol_sdk.Game
+:::game_sdk.gamecontrol.Game
