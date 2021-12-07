@@ -5,17 +5,17 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://4d-game.github.io/sdk/gamecontrol-sdk/code-references/game/" rel="canonical"/>
-<link href="../../../assets/logo.png" rel="icon"/>
+<link href="https://4d-game.github.io/sdk/controller-sdk/config-file/" rel="canonical"/>
+<link href="../../assets/logo.png" rel="icon"/>
 <meta content="mkdocs-1.2.3, mkdocs-material-8.0.1" name="generator"/>
-<title>Game - Crazy Comet - Gamecontrol</title>
-<link href="../../../assets/stylesheets/main.816931ca.min.css" rel="stylesheet"/>
-<link href="../../../assets/stylesheets/palette.9204c3b2.min.css" rel="stylesheet"/>
+<title>Config File - Crazy Comet - Gamecontrol</title>
+<link href="../../assets/stylesheets/main.816931ca.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.9204c3b2.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../../../assets/_mkdocstrings.css" rel="stylesheet"/>
-<script>function __md_scope(e,t,_){return new URL(_||(t===localStorage?"../../..":"../../.."),location).pathname+"."+e}function __md_get(e,t=localStorage,_){return JSON.parse(t.getItem(__md_scope(e,t,_)))}function __md_set(e,t,_=localStorage,o){try{_.setItem(__md_scope(e,_,o),JSON.stringify(t))}catch(e){}}</script>
+<link href="../../assets/_mkdocstrings.css" rel="stylesheet"/>
+<script>function __md_scope(e,t,_){return new URL(_||(t===localStorage?"../..":"../.."),location).pathname+"."+e}function __md_get(e,t=localStorage,_){return JSON.parse(t.getItem(__md_scope(e,t,_)))}function __md_set(e,t,_=localStorage,o){try{_.setItem(__md_scope(e,_,o),JSON.stringify(t))}catch(e){}}</script>
 </head>
 <body data-md-color-accent="" data-md-color-primary="light-blue" data-md-color-scheme="slate" dir="ltr">
 <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
@@ -23,7 +23,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#game">
+<a class="md-skip" href="#config-file">
           Skip to content
         </a>
 </div>
@@ -31,8 +31,8 @@
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="Crazy Comet - Gamecontrol" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Crazy Comet - Gamecontrol">
-<img alt="logo" src="../../../assets/logo.png"/>
+<a aria-label="Crazy Comet - Gamecontrol" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Crazy Comet - Gamecontrol">
+<img alt="logo" src="../../assets/logo.png"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
@@ -47,7 +47,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Game
+              Config File
             
           </span>
 </div>
@@ -118,7 +118,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../../..">
+<a class="md-tabs__link md-tabs__link--active" href="../..">
         SDK
       </a>
 </li>
@@ -137,8 +137,8 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Crazy Comet - Gamecontrol" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Crazy Comet - Gamecontrol">
-<img alt="logo" src="../../../assets/logo.png"/>
+<a aria-label="Crazy Comet - Gamecontrol" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Crazy Comet - Gamecontrol">
+<img alt="logo" src="../../assets/logo.png"/>
 </a>
     Crazy Comet - Gamecontrol
   </label>
@@ -201,17 +201,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../..">
+<a class="md-nav__link" href="../..">
         Overview
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../structure/">
+<a class="md-nav__link" href="../../structure/">
         Structure
       </a>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" id="__nav_4_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" id="__nav_4_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4_3">
           Controller
           <span class="md-nav__icon md-icon"></span>
@@ -223,19 +223,51 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../controller-sdk/">
+<a class="md-nav__link" href="../">
         Structure
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../controller-sdk/key-maps/">
+<a class="md-nav__link" href="../key-maps/">
         Key Maps
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../controller-sdk/config-file/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Config File
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         Config File
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#structure">
+    Structure
+  </a>
+<nav aria-label="Structure" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#controller">
+    CONTROLLER
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mqtt">
+    MQTT
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_4" id="__nav_4_3_4" type="checkbox"/>
@@ -250,7 +282,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../controller-sdk/code-references/game/">
+<a class="md-nav__link" href="../code-references/game/">
         Game
       </a>
 </li>
@@ -267,17 +299,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../controller-sdk/code-references/input/">
+<a class="md-nav__link" href="../code-references/input/">
         Input
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../controller-sdk/code-references/joystick/">
+<a class="md-nav__link" href="../code-references/joystick/">
         Joystick
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../controller-sdk/code-references/switch/">
+<a class="md-nav__link" href="../code-references/switch/">
         Switch
       </a>
 </li>
@@ -285,7 +317,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../controller-sdk/code-references/key_map/">
+<a class="md-nav__link" href="../code-references/key_map/">
         key_map
       </a>
 </li>
@@ -295,8 +327,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" id="__nav_4_4" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" id="__nav_4_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4_4">
           Gamecontrol
           <span class="md-nav__icon md-icon"></span>
@@ -308,17 +340,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../">
+<a class="md-nav__link" href="../../gamecontrol-sdk/">
         Structure
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../config-file/">
+<a class="md-nav__link" href="../../gamecontrol-sdk/config-file/">
         Config File
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4_3" id="__nav_4_4_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4_3" id="__nav_4_4_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4_4_3">
           Code References
           <span class="md-nav__icon md-icon"></span>
@@ -329,43 +361,10 @@
           Code References
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Game
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gamecontrol-sdk/code-references/game/">
         Game
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#game_sdk.gamecontrol.game.Game">
-    game_sdk.gamecontrol.game.Game
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#game_sdk.gamecontrol.game.Game.players">
-    players
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#game_sdk.gamecontrol.game.Game.on_score">
-    on_score()
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#game_sdk.gamecontrol.game.Game.set_game_state">
-    set_game_state()
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -386,7 +385,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../passive-sdk/">
+<a class="md-nav__link" href="../../passive-sdk/">
         Structure
       </a>
 </li>
@@ -403,7 +402,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../passive-sdk/code-references/game/">
+<a class="md-nav__link" href="../../passive-sdk/code-references/game/">
         Game
       </a>
 </li>
@@ -426,17 +425,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../code-references/game/">
+<a class="md-nav__link" href="../../code-references/game/">
         GameTemplate
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../code-references/game-io/">
+<a class="md-nav__link" href="../../code-references/game-io/">
         GameIO
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../code-references/players/">
+<a class="md-nav__link" href="../../code-references/players/">
         Players
       </a>
 </li>
@@ -466,24 +465,23 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#game_sdk.gamecontrol.game.Game">
-    game_sdk.gamecontrol.game.Game
+<a class="md-nav__link" href="#structure">
+    Structure
+  </a>
+<nav aria-label="Structure" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#controller">
+    CONTROLLER
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#game_sdk.gamecontrol.game.Game.players">
-    players
+<a class="md-nav__link" href="#mqtt">
+    MQTT
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#game_sdk.gamecontrol.game.Game.on_score">
-    on_score()
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#game_sdk.gamecontrol.game.Game.set_game_state">
-    set_game_state()
-  </a>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -492,103 +490,40 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/4D-Game/sdk/edit/master/docs/gamecontrol-sdk/code-references/game.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/4D-Game/sdk/edit/master/docs/controller-sdk/config-file.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="game">Game</h1>
-<div class="doc doc-object doc-class">
-<a id="game_sdk.gamecontrol.game.Game"></a>
-<div class="doc doc-contents first">
-<p>Class to control the whole game. Inherit from this class and call <code>run()</code> to start your gamecontrol</p>
-<div class="doc doc-children">
-<div class="doc doc-object doc-attribute">
-<h2 class="doc doc-heading" id="game_sdk.gamecontrol.game.Game.players">
-<code class="highlight language-python"><span class="n">players</span></code>
-<span class="doc doc-properties">
-<small class="doc doc-property doc-property-property"><code>property</code></small>
-<small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
-</span>
-</h2>
-<div class="doc doc-contents">
-<p>Instance of <code>Player</code> used to acces player information</p>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="game_sdk.gamecontrol.game.Game.on_score">
-<code class="highlight language-python"><span class="n">on_score</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-<span class="doc doc-properties">
-<small class="doc doc-property doc-property-async"><code>async</code></small>
-</span>
-</h2>
-<div class="doc doc-contents">
-<p>Executed, when a player scores one or more points</p>
-<details class="quote">
-<summary>Source code in <code>game_sdk/gamecontrol/game.py</code></summary>
-<div class="highlight"><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">on_score</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">"""</span>
-<span class="sd">        Executed, when a player scores one or more points</span>
-<span class="sd">    """</span>
+<h1 id="config-file">Config File</h1>
+<p>To configure the game sdk a config.toml can be created. The path to it can be set when executing <code>Game.run(config_path="path/to/your/config.toml")</code>. The default path is <code>/home/pi/Controller/config.toml</code></p>
+<h2 id="structure">Structure</h2>
+<p><strong>Example</strong>
+<div class="highlight"><pre><span></span><code><span class="n">seat</span><span class="o">=</span><span class="mi">1</span>
 
-    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"ON SCORE"</span><span class="p">)</span>
-</code></pre></div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="game_sdk.gamecontrol.game.Game.set_game_state">
-<code class="highlight language-python"><span class="n">set_game_state</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span></code>
-<span class="doc doc-properties">
-<small class="doc doc-property doc-property-async"><code>async</code></small>
-</span>
-</h2>
-<div class="doc doc-contents">
-<p>Set <code>game_state</code> and execute the coresponding function</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>state</code></td>
-<td><code>GameState</code></td>
-<td><p>State to wich to switch</p></td>
-<td><em>required</em></td>
-</tr>
-</tbody>
-</table>
-<details class="quote">
-<summary>Source code in <code>game_sdk/gamecontrol/game.py</code></summary>
-<div class="highlight"><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">set_game_state</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">GameState</span><span class="p">):</span>
-    <span class="sd">"""</span>
-<span class="sd">        Set `game_state` and execute the coresponding function</span>
+<span class="k">[CONTROLLER]</span>
+<span class="n">input_device</span><span class="o">=</span><span class="s">"/dev/input/event1"</span>
 
-<span class="sd">        Arguments:</span>
-<span class="sd">            state: State to wich to switch</span>
-<span class="sd">    """</span>
-
-    <span class="bp">self</span><span class="o">.</span><span class="n">_game_state</span> <span class="o">=</span> <span class="n">state</span>
-
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_game_state</span> <span class="o">==</span> <span class="n">GameState</span><span class="o">.</span><span class="n">START</span><span class="p">:</span>
-        <span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">on_pregame</span><span class="p">())</span>
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_game_state</span> <span class="o">==</span> <span class="n">GameState</span><span class="o">.</span><span class="n">RUN</span><span class="p">:</span>
-        <span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">on_start</span><span class="p">())</span>
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_game_state</span> <span class="o">==</span> <span class="n">GameState</span><span class="o">.</span><span class="n">END</span><span class="p">:</span>
-        <span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">on_end</span><span class="p">())</span>
-
-    <span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_game_io</span><span class="o">.</span><span class="n">set_game_state</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_game_state</span><span class="p">))</span>
-</code></pre></div>
-</details>
-</div>
-</div>
-</div>
-</div>
-</div>
+<span class="k">[MQTT]</span>
+<span class="n">broker_ip</span><span class="o">=</span><span class="s">"192.168.1.20"</span>
+<span class="n">borker_port</span><span class="o">=</span><span class="s">"1883"</span>
+<span class="n">username</span><span class="o">=</span><span class="s">"mqtt"</span>
+<span class="n">password</span><span class="o">=</span><span class="s">"secret"</span>
+</code></pre></div></p>
+<ul>
+<li><code>int seat</code>: ID of your controller</li>
+</ul>
+<h3 id="controller">CONTROLLER</h3>
+<p>Configuration for the connected gamepad</p>
+<ul>
+<li><code>str input_device</code>: Path to your input device</li>
+</ul>
+<h3 id="mqtt">MQTT</h3>
+<p>Configuration to connect to the mqtt broker of the gamecontrol</p>
+<ul>
+<li><code>str broker_ip</code>: Adress to your mqtt broker</li>
+<li><code>str broker_port</code>(Optional): MQTT Port of your broker (default <code>1883</code>)</li>
+<li><code>str username</code>(Optional): Username for authentifikation (default <code>NONE</code>)</li>
+<li><code>str password</code>(Optional): Password for authentifikation (default <code>NONE</code>)</li>
+</ul>
 </article>
 </div>
 </div>
@@ -599,7 +534,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Config File" class="md-footer__link md-footer__link--prev" href="../../config-file/" rel="prev">
+<a aria-label="Previous: Key Maps" class="md-footer__link md-footer__link--prev" href="../key-maps/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -608,17 +543,17 @@
 <span class="md-footer__direction">
                 Previous
               </span>
-              Config File
+              Key Maps
             </div>
 </div>
 </a>
-<a aria-label="Next: Structure" class="md-footer__link md-footer__link--next" href="../../../passive-sdk/" rel="next">
+<a aria-label="Next: Game" class="md-footer__link md-footer__link--next" href="../code-references/game/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              Structure
+              Game
             </div>
 </div>
 <div class="md-footer__button md-icon">
@@ -643,7 +578,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.01824240.min.js"}</script>
-<script src="../../../assets/javascripts/bundle.a87c2adc.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.01824240.min.js"}</script>
+<script src="../../assets/javascripts/bundle.a87c2adc.min.js"></script>
 </body>
 </html>
