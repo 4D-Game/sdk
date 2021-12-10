@@ -74,7 +74,7 @@ class GameIO:
         topics = [("status/game", 0)]
 
         async for msg in self.subscribe(topics):
-            data = msg(1)
+            data = msg[1]
             mode = data['mode'] if 'mode' in data else 'idle'
 
             game_state = GameState.IDLE

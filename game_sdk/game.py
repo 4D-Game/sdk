@@ -75,8 +75,6 @@ class GameTemplate:
             Executed, when the game ends
         """
 
-        self._players.reset()
-
         logging.info("ON END")
 
     async def _on_exit(self, err: Exception = None):
@@ -86,8 +84,6 @@ class GameTemplate:
             Arguments:
                 err: Value of the exception when the game exited with none zero code
         """
-
-        await self.on_exit(err)
 
     async def on_exit(self, err: Exception = None):
         """

@@ -55,4 +55,4 @@ class LedTestGame(Game):
 
 if __name__ == "__main__":
     # Start running the game
-    LedTestGame().run()
+    LedTestGame().run("/home/pi/Controller/config.toml")
