@@ -8,8 +8,7 @@ class Joystick(Input):
         Class for all joystick inputs
     """
 
-    joystick_pos: JoystickCode
-    threshhold: float = 0.1
+    THRESHHOLD: float = 0.1
     _last_pos = 0
 
     def __init__(self, seat: int, name: str):
@@ -30,7 +29,7 @@ class Joystick(Input):
 
         self._last_pos = mapped_pos
 
-        if ((- self.threshhold) < mapped_pos < (self.threshhold)):
+        if ((- self.THRESHHOLD) < mapped_pos < (self.THRESHHOLD)):
             logging.debug("Threshold reached")
             self._last_pos = 0
 
