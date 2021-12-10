@@ -34,3 +34,23 @@ All communication between different Devices is done with MQTT. The following str
 ### MQTT Structure
 
 ![MQTT Structure](assets/mqtt_structure_dark.svg)
+
+## Create a game
+
+A simple game consists at least of:
+
+- 1x Controller
+- 1x Gamecontrol
+
+The number of Controller can be increased up to 8.[^1]
+
+You can also have an element in your game that get's all information but doesn't interact with the game loop (e.g. A display to show the score of a player). For this the **passive sdk** can be used. The number of passive devices is not restricted.[^2]
+
+To learn how to get started with the different parts of the sdk see the following sections:
+
+- [Controller - Getting Started](controller-sdk/index.md)
+- [Gamecontrol - Getting Started](gamecontrol-sdk/index.md)
+- [Passive - Getting Started](passive-sdk/index.md)
+
+[^1]: Tested with 8 but it should work with more.
+[^2]: Only tested with one.

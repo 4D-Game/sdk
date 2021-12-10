@@ -8,10 +8,10 @@ nav:
       - Controller: https://4d-game.github.io/Controller/
       - Gamecontrol: https://4d-game.github.io/Gamecontrol/
   - SDK:
-      - Overview: index.md
+      - Getting Started: index.md
       - Structure: structure.md
       - Controller:
-          - Structure: controller-sdk/index.md
+          - Getting Started: controller-sdk/index.md
           - Key Maps: controller-sdk/key-maps.md
           - Config File: controller-sdk/config-file.md
           - Code References:
@@ -22,12 +22,13 @@ nav:
                   Switch: controller-sdk/code-references/switch.md
               - key_map: controller-sdk/code-references/key_map.md
       - Gamecontrol:
-          - Structure: gamecontrol-sdk/index.md
+          - Getting Started: gamecontrol-sdk/index.md
           - Config File: gamecontrol-sdk/config-file.md
           - Code References:
               - Game: gamecontrol-sdk/code-references/game.md
       - Passive:
-          - Structure: passive-sdk/index.md
+          - Getting Started: passive-sdk/index.md
+          - Config File: gamecontrol-sdk/config-file.md
           - Code References:
               - Game: passive-sdk/code-references/game.md
       - Code References:
@@ -72,6 +73,7 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.highlight
+  - footnotes
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid

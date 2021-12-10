@@ -25,6 +25,9 @@ class LogLevel(enum.Enum):
 class GameTemplate:
     """
       Template for the different Game classes
+
+      Attributes:
+        config: contains the configuration from the config file
     """
 
     config: MutableMapping[str, Any]
