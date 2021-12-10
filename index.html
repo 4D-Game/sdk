@@ -8,7 +8,7 @@
 <link href="https://4d-game.github.io/sdk/" rel="canonical"/>
 <link href="assets/logo.png" rel="icon"/>
 <meta content="mkdocs-1.2.3, mkdocs-material-8.0.1" name="generator"/>
-<title>Overview - Crazy Comet - Gamecontrol</title>
+<title>Getting Started - Crazy Comet - Gamecontrol</title>
 <link href="assets/stylesheets/main.816931ca.min.css" rel="stylesheet"/>
 <link href="assets/stylesheets/palette.9204c3b2.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -47,7 +47,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Overview
+              Getting Started
             
           </span>
 </div>
@@ -203,11 +203,11 @@
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Overview
+          Getting Started
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href=".">
-        Overview
+        Getting Started
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -267,6 +267,11 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#create-a-game">
+    Create a game
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -289,7 +294,7 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="controller-sdk/">
-        Structure
+        Getting Started
       </a>
 </li>
 <li class="md-nav__item">
@@ -374,7 +379,7 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="gamecontrol-sdk/">
-        Structure
+        Getting Started
       </a>
 </li>
 <li class="md-nav__item">
@@ -419,17 +424,22 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="passive-sdk/">
-        Structure
+        Getting Started
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="gamecontrol-sdk/config-file/">
+        Config File
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5_2" id="__nav_4_5_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_5_2">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5_3" id="__nav_4_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5_3">
           Code References
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="Code References" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_4_5_2">
+<label class="md-nav__title" for="__nav_4_5_3">
 <span class="md-nav__icon md-icon"></span>
           Code References
         </label>
@@ -549,6 +559,11 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#create-a-game">
+    Create a game
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -583,6 +598,31 @@
 <p>All communication between different Devices is done with MQTT. The following structure is used:</p>
 <h3 id="mqtt-structure">MQTT Structure</h3>
 <p><img alt="MQTT Structure" src="assets/mqtt_structure_dark.svg"/></p>
+<h2 id="create-a-game">Create a game</h2>
+<p>A simple game consists at least of:</p>
+<ul>
+<li>1x Controller</li>
+<li>1x Gamecontrol</li>
+</ul>
+<p>The number of Controller can be increased up to 8.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<p>You can also have an element in your game that get's all information but doesn't interact with the game loop (e.g. A display to show the score of a player). For this the <strong>passive sdk</strong> can be used. The number of passive devices is not restricted.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
+<p>To learn how to get started with the different parts of the sdk see the following sections:</p>
+<ul>
+<li><a href="controller-sdk/">Controller - Getting Started</a></li>
+<li><a href="gamecontrol-sdk/">Gamecontrol - Getting Started</a></li>
+<li><a href="passive-sdk/">Passive - Getting Started</a></li>
+</ul>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Tested with 8 but it should work with more. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p>Only tested with one. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+</ol>
+</div>
 </article>
 </div>
 </div>
