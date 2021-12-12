@@ -33,7 +33,7 @@ class Game(GameTemplate):
 
         logging.info("ON SCORE")
 
-    async def _game_io_ctlsub(self):
+    async def _game_io_sub(self):
         """
             Subscribe to changes of the game state
 
@@ -41,7 +41,7 @@ class Game(GameTemplate):
                 mqtt_conf: GameIO configuration
         """
 
-        topic = [("score", 0)]
+        topic = [("score", 0), ("status/game", 0)]
 
         async for topic, data in self._game_io.subscribe(topic):
             logging.debug("Got Message from: %s with %s", topic, data)
@@ -49,42 +49,39 @@ class Game(GameTemplate):
             if (topic == "score") and self._game_state is GameState.RUN:
                 self._players.set_score(data['seat'], data['score'])
                 asyncio.create_task(self.on_score())
+            elif (topic == "status/game"):
+                mode = data['mode'] if 'mode' in data else 'idle'
 
-    async def _game_io_statussub(self):
-        """
-            Subscribe to changes of the game state
+                game_state = GameState.IDLE
+                if mode == 'start':
+                    game_state = GameState.START
+                elif mode == 'run':
+                    game_state = GameState.RUN
+                elif mode == 'end':
+                    game_state = GameState.END
+                 
+                logging.debug("Got Gamestate %s", game_state)
+                self._game_state = game_state
 
-            Arguments:
-                mqtt_conf: GameIO configuration
-        """
+                if game_state == GameState.START:
+                    await self.on_pregame()
+                elif game_state == GameState.RUN:
+                    await self.on_start()
+                elif game_state == GameState.END:
+                    await self.on_end()
 
-        async for game_state in self._game_io.subscribe_to_status():
-            logging.debug("Got Gamestate %s", game_state)
-            self._game_state = game_state
-
-            if game_state == GameState.START:
-                await self.on_pregame()
-            elif game_state == GameState.RUN:
-                await self.on_start()
-            elif game_state == GameState.END:
-                await self.on_end()
-
-    async def _run(self, conf_path: str):
+    async def _run(self):
         """
             Asynchronous `run` function
         """
         try:
-            self.config = toml.load(conf_path)
-            logging.debug(self.config)
-
             self._players = Players(self.config['seats'])
 
             self._game_io = GameIO(self.config['MQTT'])
             await self._game_io.connect()
 
             main_loop = asyncio.gather(
-                self._game_io_ctlsub(),
-                self._game_io_statussub()
+                self._game_io_sub()
             )
 
             await self.on_init()
