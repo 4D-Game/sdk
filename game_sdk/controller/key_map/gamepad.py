@@ -36,7 +36,7 @@ class GamePad():
     key_map: dict
     joystick_map: dict
 
-    def __init__(self, name: str, key_map: dict, joystick_map: dict):
+    def __init__(self, name: str, key_map: dict, joystick_map: dict, analog_range: int):
         """
             Creates used controller with related maps
 
@@ -46,8 +46,15 @@ class GamePad():
                 joystick_map: contains code from controller and associated sdk-code the joystick
         """
         self.name = name
+        self.analog_range = analog_range
         self._key_map = key_map
         self._joystick_map = joystick_map
+
+    def map_joystick_pos(self, pos: int) -> float:
+        mapped_pos = (pos / (self.analog_range / 2)) - 1
+
+        logging.info("Input pos: %d, Output pos: %f", pos, mapped_pos)
+        return mapped_pos
 
     def map_key(self, code: int) -> Enum:
         """
@@ -80,7 +87,9 @@ XBoxWireless = GamePad('XBox Wireless', {
     1: JoystickCode.LEFT_Y,
     2: JoystickCode.RIGHT_X,
     5: JoystickCode.RIGHT_Y
-})
+},
+    analog_range=65536
+)
 """
     Key-map for XBox Wireless Controller
 """
@@ -101,7 +110,32 @@ XBox360Wireless = GamePad('XBox 360 Wireless', {
     1: JoystickCode.LEFT_Y,
     3: JoystickCode.RIGHT_X,
     4: JoystickCode.RIGHT_Y
-})
+},
+    analog_range=65536
+)
 """
     Key-map for XBox 360 Wireless Controller
+"""
+
+BosiWirelessGXT590 = GamePad('Bosi Wireless GXT590', {
+    306: KeyCode.BUT_0,
+    305: KeyCode.BUT_1,
+    307: KeyCode.BUT_2,
+    304: KeyCode.BUT_3,
+    16: KeyCode.DPAD_X,
+    17: KeyCode.DPAD_Y,
+    308: KeyCode.L1,
+    310: KeyCode.L2,
+    309: KeyCode.R1,
+    311: KeyCode.R2
+}, {
+    0: JoystickCode.LEFT_X,
+    1: JoystickCode.LEFT_Y,
+    2: JoystickCode.RIGHT_X,
+    5: JoystickCode.RIGHT_Y
+},
+    analog_range=256
+)
+"""
+    Key-map for Bosi Wireless Gamepad GXT 590
 """

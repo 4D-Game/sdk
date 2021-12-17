@@ -21,19 +21,13 @@ class Joystick(Input):
         """
         super().__init__(seat, name)
 
-    def _map_position(self, pos: int) -> float:
-        return (pos / 32768) - 1
-
     async def set_direction(self, seat: int, pos: int):
-        mapped_pos = self._map_position(pos)
-
-        self._last_pos = mapped_pos
-
-        if ((- self.THRESHHOLD) < mapped_pos < (self.THRESHHOLD)):
+        if ((- self.THRESHHOLD) < pos < (self.THRESHHOLD)):
             logging.debug("Threshold reached")
-            self._last_pos = 0
+            pos = 0
 
-        await self.get_direction(seat, self._last_pos)
+        self._last_pos = pos
+        await self.get_direction(seat, pos)
 
     async def get_direction(self, seat: int, pos: float):
         """

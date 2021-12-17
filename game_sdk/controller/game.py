@@ -8,7 +8,7 @@ from evdev import InputDevice
 from game_sdk.game import GameTemplate
 from game_sdk.game_io import GameIO, GameState
 from game_sdk.controller.inputs import Joystick, Switch
-from game_sdk.controller.key_map.gamepad import KeyCode, XBoxWireless
+from game_sdk.controller.key_map.gamepad import BosiWirelessGXT590, KeyCode, XBoxWireless
 
 
 class ControllerNotFoundError(FileNotFoundError):
@@ -65,10 +65,10 @@ class Game(GameTemplate):
         try:
             async for ev in self._input_dev.async_read_loop():
                 logging.debug("Got controller input - CODE: %d, \tVALUE %d", ev.code, ev.value)
-                mapped_code = XBoxWireless.map_key(ev.code)
+                mapped_code = BosiWirelessGXT590.map_key(ev.code)
 
                 if self._game_state is GameState.RUN:
-                    if mapped_code in self.controls:
+                    if mapped_code in self.controls and ev.type != 0:
                         control = self.controls[mapped_code]
 
                         if issubclass(type(control), Switch):
@@ -77,7 +77,7 @@ class Game(GameTemplate):
                             else:
                                 asyncio.create_task(control.off(self.config['seat']))
                         elif issubclass(type(control), Joystick):
-                            asyncio.create_task(control.set_direction(self.config['seat'], ev.value))
+                            asyncio.create_task(control.set_direction(self.config['seat'], BosiWirelessGXT590.map_joystick_pos(ev.value)))
                 elif self._game_state is GameState.IDLE:
                     if mapped_code is self.ready_control and ev.value > 0:
                         asyncio.create_task(self._game_io.ready(self.config['seat']))

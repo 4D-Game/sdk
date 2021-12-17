@@ -69,4 +69,4 @@ if __name__ == "__main__"
 ```
 
 !!! NOTE
-    Don't forget creating a config file according to the [specifications](../gamecontrol-sdk/config-file.md)
+    Don't forget creating a config file according to the [specifications](config-file.md)
