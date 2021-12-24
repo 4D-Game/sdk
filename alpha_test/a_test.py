@@ -11,13 +11,13 @@ class Debug:
         Class to collect the values from different game module
     """
 
-    def __init__(self): 
+    def __init__(self):
 
         """
             create new csv file
         """
 
-        self.toWrite= [] 
+        self.toWrite= []
         self.read_time = datetime.datetime.fromtimestamp(1640272000).isoformat()
 
     def write_stepper(self,test_number:int, stepper_upper_pos:int, stepper_side_pos:int, stepper_upper_speed:int, stepper_side_speed:int,stepper_side_pos_en:int,):
@@ -26,11 +26,11 @@ class Debug:
             Write values from central tower
 
             Arguments:
-                stepper_upper_pos: Position of the upper stepper motor 
+                stepper_upper_pos: Position of the upper stepper motor
                 stepper_side_pos: Position of the side stepper motor
                 stepper_side_pos_en: Position of the side stepper motor from Encoder
                 stepper_upper_speed: Velocity of the upper stepper motor
-                stepper_side_speed: Velocity of theside stepper motor 
+                stepper_side_speed: Velocity of theside stepper motor
                 test_number: Number of the test game
         """
 
@@ -40,8 +40,8 @@ class Debug:
             'Stepper Upper Speed':stepper_upper_speed, 'Stepper Side Speed':stepper_side_speed, 'Stepper Side encoder':stepper_side_pos_en}
         ]
         filename = 'stepper({}).csv'.format(test_number)
-        file = open(filename, 'a', newline='')   
-       
+        file = open(filename, 'a', newline='')
+
         with file:
             file_is_empty = os.stat(filename).st_size == 0
             writer = csv.writer(file,delimiter=',')
@@ -61,21 +61,21 @@ class Debug:
             Arguments:
                 seat: Controller seat
                 test_number: Number of the test game
-                joystick_pos: position of the joystick 
-                joystick_pos_calc: Mapped position of the joystick 
+                joystick_pos: position of the joystick
+                joystick_pos_calc: Mapped position of the joystick
                 servo_pos: Position of the servo motor
 
         """
-    
-    
+
+
         self.fieldnames = ['Time', 'Joystick position', 'Joystick position calculated', 'Servo position']
         self.rows=[
             {'Time':self.read_time,'Joystick position':joystick_pos, 'Joystick position calculated':joystick_pos_calc,
             'Servo position':servo_pos}
         ]
         filename = 'turrets({},{}).csv'.format(test_number, seat)
-        file = open(filename, 'a', newline='')   
-       
+        file = open(filename, 'a', newline='')
+
         with file:
             file_is_empty = os.stat(filename).st_size == 0
             writer = csv.writer(file,delimiter=',')
@@ -88,7 +88,7 @@ class Debug:
 
     def write_bluster(self,test_number:int, seat:int, led_points:bool, led_shoot:bool, sensor:bool,score:int, magazine:int):
 
-    
+
         """
             Write values from bluster
 
@@ -102,16 +102,16 @@ class Debug:
                 magazine: Number of shots left in the magazine
 
         """
-    
-    
+
+
         self.fieldnames = ['Time', 'Points LED', 'Shoot LED', 'Sensor state', 'Score', 'Magazine']
         self.rows=[
             {'Time':self.read_time,'Points LED':led_points, 'Shoot LED':led_shoot,
             'Sensor state':sensor, 'Score':score, 'Magazine':magazine}
         ]
         filename = 'bluster({},{}).csv'.format(test_number, seat)
-        file = open(filename, 'a', newline='')   
-       
+        file = open(filename, 'a', newline='')
+
         with file:
             file_is_empty = os.stat(filename).st_size == 0
             writer = csv.writer(file,delimiter=',')
@@ -140,8 +140,8 @@ class Debug:
             {'Time':self.read_time,'Score Team A':score_A, 'Score Team B':score_B, 'Display state':state}
         ]
         filename = 'display({}).csv'.format(test_number)
-        file = open(filename, 'a', newline='')   
-       
+        file = open(filename, 'a', newline='')
+
         with file:
             file_is_empty = os.stat(filename).st_size == 0
             writer = csv.writer(file,delimiter=',')
@@ -152,10 +152,10 @@ class Debug:
 
             writer.writerows(self.rows)
 
-    def write_state(self,test_number:int,state:str):   
+    def write_state(self,test_number:int,state:str):
 
         """
-            Write values from state machine 
+            Write values from state machine
 
             Arguments:
                 test_number: Number of the test game
@@ -168,8 +168,8 @@ class Debug:
             {'Time':self.read_time,'Game state':state}
         ]
         filename = 'state({}).csv'.format(test_number)
-        file = open(filename, 'a', newline='')   
-       
+        file = open(filename, 'a', newline='')
+
         with file:
             file_is_empty = os.stat(filename).st_size == 0
             writer = csv.writer(file,delimiter=',')
@@ -181,10 +181,10 @@ class Debug:
             writer.writerows(self.rows)
 
 
-    def clear_file(self, name:str):   
+    def clear_file(self, name:str):
 
         """
-            Delete everything on a file and close the file 
+            Delete everything on a file and close the file
 
             Arguments:
                 name: Name of file to close
@@ -193,12 +193,12 @@ class Debug:
         file.truncate(0)
         file.close()
 
-
-time_test = Debug()
-time_test.clear_file('stepper(1).csv')
-time_test.write_stepper(1,5,2,4,5,6)
-time_test.write_stepper(3,3,32,34,67,2)
-time_test.write_turrets(1,5,2,4,5)
-time_test.write_bluster(1,5,0,0,0,3,54)
-time_test.write_display(1,5,2,'Start')
-time_test.write_state(1,'Start')
+if __name__ == "__main__":
+    time_test = Debug()
+    time_test.clear_file('stepper(1).csv')
+    time_test.write_stepper(1,5,2,4,5,6)
+    time_test.write_stepper(3,3,32,34,67,2)
+    time_test.write_turrets(1,5,2,4,5)
+    time_test.write_bluster(1,5,0,0,0,3,54)
+    time_test.write_display(1,5,2,'Start')
+    time_test.write_state(1,'Start')
