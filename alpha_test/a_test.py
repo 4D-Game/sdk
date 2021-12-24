@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 
-import time
 import csv
 import datetime
 import os.path
 
-class Debug:
+class _Debug:
 
     """
         Class to collect the values from different game module
@@ -193,8 +192,10 @@ class Debug:
         file.truncate(0)
         file.close()
 
+debug = _Debug()
+
 if __name__ == "__main__":
-    time_test = Debug()
+    time_test = _Debug()
     time_test.clear_file('stepper(1).csv')
     time_test.write_stepper(1,5,2,4,5,6)
     time_test.write_stepper(3,3,32,34,67,2)
