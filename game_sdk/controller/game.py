@@ -89,7 +89,7 @@ class Game(GameTemplate):
             Subscribe to changes of the game state
         """
         async for game_state in self._game_io.subscribe_to_status():
-            logging.debug("Got Gamestate %s", game_state)
+            logging.info("Got Gamestate %s", game_state)
             self._game_state = game_state
 
             if game_state == GameState.START:
