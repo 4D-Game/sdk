@@ -53,7 +53,7 @@ class GamePad():
     def map_joystick_pos(self, pos: int) -> float:
         mapped_pos = (pos / (self.analog_range / 2)) - 1
 
-        logging.info("Input pos: %d, Output pos: %f", pos, mapped_pos)
+        logging.debug("Input pos: %d, Output pos: %f", pos, mapped_pos)
         return mapped_pos
 
     def map_key(self, code: int) -> Enum:

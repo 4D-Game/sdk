@@ -1,5 +1,6 @@
 import asyncio
 import logging
+from typing import Iterable
 
 from asyncio_mqtt.error import MqttError
 
@@ -7,7 +8,7 @@ from evdev import InputDevice
 
 from game_sdk.game import GameTemplate
 from game_sdk.game_io import GameIO, GameState
-from game_sdk.controller.inputs import Joystick, Switch
+from game_sdk.controller.inputs import Joystick, Switch, Input
 from game_sdk.controller.key_map.gamepad import BosiWirelessGXT590, KeyCode, XBoxWireless
 
 
@@ -21,13 +22,16 @@ class Game(GameTemplate):
     """
 
     controls: dict
-    ready_control: KeyCode
+    ready_control = {"key": KeyCode.BUT_0, "input": None}
     _input_dev: InputDevice
 
     async def _on_pregame(self):
         """
             (Private) Executed, before a new game starts
         """
+
+        if (self.ready_control["input"]):
+            await self.ready_control["input"].init(self.config['seat'])
 
         for _, control in self.controls.items():
             await control.init(self.config['seat'])
@@ -38,6 +42,9 @@ class Game(GameTemplate):
         """
             (Private) Executed, when the game ends
         """
+
+        if (self.ready_control["input"]):
+            await self.ready_control["input"].reset(self.config['seat'])
 
         for _, control in self.controls.items():
             await control.reset(self.config['seat'])
@@ -51,6 +58,9 @@ class Game(GameTemplate):
             Arguments:
                 err: Value of the exception when the game exited with none zero code
         """
+
+        if (self.ready_control["input"]):
+            await self.ready_control["input"].close(self.config['seat'])
 
         for _, control in self.controls.items():
             await control.close(self.config['seat'])
@@ -79,7 +89,8 @@ class Game(GameTemplate):
                         elif issubclass(type(control), Joystick):
                             asyncio.create_task(control.set_direction(self.config['seat'], BosiWirelessGXT590.map_joystick_pos(ev.value)))
                 elif self._game_state is GameState.IDLE:
-                    if mapped_code is self.ready_control and ev.value > 0:
+                    if mapped_code is self.ready_control["key"] and ev.value > 0 and ev.type != 0:
+                        asyncio.create_task(self.ready_control["input"].on(self.config['seat']))
                         asyncio.create_task(self._game_io.ready(self.config['seat']))
         except OSError:
             raise ControllerNotFoundError()
@@ -89,7 +100,7 @@ class Game(GameTemplate):
             Subscribe to changes of the game state
         """
         async for game_state in self._game_io.subscribe_to_status():
-            logging.debug("Got Gamestate %s", game_state)
+            logging.info("Got Gamestate %s", game_state)
             self._game_state = game_state
 
             if game_state == GameState.START:

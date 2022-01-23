@@ -1,6 +1,7 @@
 import enum
 import logging
 import asyncio
+
 from typing import Any, MutableMapping
 
 import toml
@@ -8,6 +9,10 @@ import toml
 from game_sdk import GameIO
 from game_sdk.game_io import GameState
 
+class ConfigNotFound(Exception):
+    """
+        Error when config was not found
+    """
 
 class LogLevel(enum.Enum):
     """
@@ -125,12 +130,15 @@ class GameTemplate:
         logging.getLogger().setLevel(log_level.value)
 
         try:
-            self.config = toml.load(conf_path)
-            logging.info("Config: \n%s", self.config)
+            try:
+                self.config = toml.load(conf_path)
+                logging.info("Config: \n%s", self.config)
+            except FileNotFoundError:
+                raise ConfigNotFound()
 
             loop = asyncio.get_event_loop()
             loop.run_until_complete(self._run())
-        except FileNotFoundError:
+        except ConfigNotFound as err:
             logging.error("No config found at: %s", conf_path)
         except KeyboardInterrupt:
             logging.info("Keyboard Interrupt")
