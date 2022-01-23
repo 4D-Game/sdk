@@ -73,6 +73,13 @@ class GameTemplate:
         """
         logging.info("ON START")
 
+    async def _on_end(self):
+        """
+            (Private) Executed, when the game ends
+        """
+
+        await self.on_end()
+
     async def on_end(self):
         """
             Executed, when the game ends

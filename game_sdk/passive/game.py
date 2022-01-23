@@ -59,7 +59,7 @@ class Game(GameTemplate):
                     game_state = GameState.RUN
                 elif mode == 'end':
                     game_state = GameState.END
-                 
+
                 logging.debug("Got Gamestate %s", game_state)
                 self._game_state = game_state
 
@@ -68,7 +68,15 @@ class Game(GameTemplate):
                 elif game_state == GameState.RUN:
                     await self.on_start()
                 elif game_state == GameState.END:
-                    await self.on_end()
+                    await self._on_end()
+
+    async def _on_end(self):
+        """
+            Reset player score
+        """
+
+        self.players.reset()
+        await self.on_end()
 
     async def _run(self):
         """

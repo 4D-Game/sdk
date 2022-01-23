@@ -43,7 +43,7 @@ class Game(GameTemplate):
         if self._game_state == GameState.RUN:
             asyncio.create_task(self.on_start())
         if self._game_state == GameState.END:
-            asyncio.create_task(self.on_end())
+            asyncio.create_task(self._on_end())
 
         asyncio.create_task(self._game_io.set_game_state(self._game_state))
 
@@ -95,6 +95,14 @@ class Game(GameTemplate):
                 await self.set_game_state(GameState.IDLE)
 
             self._players.reset_ready()
+
+    async def _on_end(self):
+        """
+            Reset player score
+        """
+
+        self.players.reset()
+        await self.on_end()
 
     async def _run(self):
         """
