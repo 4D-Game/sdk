@@ -64,11 +64,11 @@ class Game(GameTemplate):
                 self._game_state = game_state
 
                 if game_state == GameState.START:
-                    await self.on_pregame()
+                    asyncio.create_task(self.on_pregame())
                 elif game_state == GameState.RUN:
-                    await self.on_start()
+                    asyncio.create_task(self.on_start())
                 elif game_state == GameState.END:
-                    await self._on_end()
+                    asyncio.create_task(self._on_end())
 
     async def _on_end(self):
         """
