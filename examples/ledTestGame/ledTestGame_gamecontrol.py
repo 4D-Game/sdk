@@ -5,7 +5,15 @@ from game_sdk.game_io import GameState
 
 
 class LedTestGame(Game):
+    """
+        Gameclass for the testgame
+    """
+
     async def on_score(self):
+        """
+            check if a player reached the maximum score
+        """
+
         scores = self.players.score
 
         for key, value in scores.items():

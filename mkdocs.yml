@@ -9,32 +9,33 @@ nav:
       - Gamecontrol: https://4d-game.github.io/Gamecontrol/
   - SDK:
       - Getting Started: index.md
-      - Structure: structure.md
       - Controller:
           - Getting Started: controller-sdk/index.md
           - Key Maps: controller-sdk/key-maps.md
           - Config File: controller-sdk/config-file.md
-          - Code References:
-              - Game: controller-sdk/code-references/game.md
-              - inputs:
-                  Input: controller-sdk/code-references/input.md
-                  Joystick: controller-sdk/code-references/joystick.md
-                  Switch: controller-sdk/code-references/switch.md
-              - key_map: controller-sdk/code-references/key_map.md
       - Gamecontrol:
           - Getting Started: gamecontrol-sdk/index.md
           - Config File: gamecontrol-sdk/config-file.md
-          - Code References:
-              - Game: gamecontrol-sdk/code-references/game.md
       - Passive:
           - Getting Started: passive-sdk/index.md
           - Config File: gamecontrol-sdk/config-file.md
-          - Code References:
-              - Game: passive-sdk/code-references/game.md
+      - Examples:
+          - LED Test Game: examples/led-test-game.md
       - Code References:
           - GameTemplate: code-references/game.md
           - GameIO: code-references/game-io.md
           - Players: code-references/players.md
+          - Controller:
+              - Game: code-references/controller/game.md
+              - inputs:
+                  Input: code-references/controller/input.md
+                  Joystick: code-references/controller/joystick.md
+                  Switch: code-references/controller/switch.md
+              - key_map: code-references/controller/key_map.md
+          - Gamecontrol:
+              - Game: code-references/gamecontrol/game.md
+          - Passive:
+              - Game: code-references/passive/game.md
   - Hardware: https://4d-game.github.io/Hardware
 
 repo_url: https://github.com/4D-Game/sdk

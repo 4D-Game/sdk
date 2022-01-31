@@ -70,7 +70,7 @@ classDiagram
 
   class Game~GameTemplate~{
     +dict controls
-    +KeyCode ready_control
+    +Input ready_control
     -evdev.InputDevice input_dev
     -on_pregame()
     -on_end()
@@ -80,8 +80,6 @@ classDiagram
     -run()
   }
 ```
-
-## Create a game
 
 ## Create a game
 
