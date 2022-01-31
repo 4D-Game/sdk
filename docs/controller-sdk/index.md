@@ -22,11 +22,10 @@ classDiagram
   class Joystick{
     +JoystickCode joystick_pos
     +float threshhold
-    -float last_pos
+    -float _last_pos
     +__init__(int seat, str name, JoystickCode joystick_pos)
     +set_direction(int seat, int pos)
     +get_direction(int seat, float pos)
-    -map_position(int pos)
   }
   Joystick --|> Input
 
@@ -70,14 +69,14 @@ classDiagram
 
   class Game~GameTemplate~{
     +dict controls
-    +Input ready_control
-    -evdev.InputDevice input_dev
-    -on_pregame()
-    -on_end()
-    -on_exit(Exception err)
-    -ctl_sub()
-    -game_io_sub()
-    -run()
+    +dict ready_control
+    -evdev.InputDevice _input_dev
+    -_on_pregame()
+    -_on_end()
+    -_on_exit(Exception err)
+    -_ctl_sub()
+    -_game_io_sub()
+    -_run()
   }
 ```
 

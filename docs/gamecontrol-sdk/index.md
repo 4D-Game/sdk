@@ -9,13 +9,14 @@ The `Game` class provides events depending on the game state as well as a method
 ```mermaid
 classDiagram
   class Game~GameTemplate~{
-    -Players players
+    -Players _players
     +Players players
     +set_game_state(GameState: state)
     +on_score()
-    -game_io_sub()
-    -ready()
-    -run()
+    -_game_io_sub()
+    -_ready()
+    -_on_end()
+    -_run()
   }
 ```
 
