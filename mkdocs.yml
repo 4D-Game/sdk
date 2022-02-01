@@ -3,10 +3,11 @@ site_url: https://4d-game.github.io/sdk
 
 nav:
   - Home: https://4d-game.github.io
-  - Coding Style: https://4d-game.github.io/coding-style/cpp/
+  - Working on this Project: https://4d-game.github.io/game_concept/
   - Game Code:
       - Controller: https://4d-game.github.io/Controller/
       - Gamecontrol: https://4d-game.github.io/Gamecontrol/
+  - Game Hardware: https://4d-game.github.io/Hardware
   - SDK:
       - Getting Started: index.md
       - Controller:
@@ -36,7 +37,6 @@ nav:
               - Game: code-references/gamecontrol/game.md
           - Passive:
               - Game: code-references/passive/game.md
-  - Hardware: https://4d-game.github.io/Hardware
 
 repo_url: https://github.com/4D-Game/sdk
 repo_name: 4D-Game/SDK
