@@ -1,10 +1,10 @@
 # 4D-Game SDK
 
-The 4D-Game SDK allows you to create a physical Game wich can be controlled with a Gamepad over a Raspberry Pi. To create a game, every Player (Gamepad) gets it's own Raspberry Pi (**Controller**). The control of the Game is done by one Raspberry Pi called the **Gamecontrol**.
+The 4D-Game SDK allows you to create a physical Game which can be controlled with a Gamepad over a Raspberry Pi. To create a game, every Player (Gamepad) gets it's own Raspberry Pi (**Controller**). The control of the Game is done by one Raspberry Pi called the **Gamecontrol**.
 
 ## Gameloop
 
-The course of every game can be described by a state machine called the gameloop. It is consisting of the _idle-_, _start-_, _run-_ and _end-_States wich are controlled by the **Gamecontrol**.
+The course of every game can be described by a state machine called the gameloop. It is consisting of the _idle-_, _start-_, _run-_ and _end-_States which are controlled by the **Gamecontrol**.
 
 ```mermaid
 stateDiagram-v2

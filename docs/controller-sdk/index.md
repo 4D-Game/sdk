@@ -1,6 +1,6 @@
 # Controller SDK
 
-Controller are Raspberry Pi's wich control the game figures.
+Controller are Raspberry Pi's which control the game figures.
 
 This module provides a `Game` class for a controller. The class is used to emit events debending on the game loop. The class also listens on gamepad inputs.
 
@@ -84,7 +84,7 @@ classDiagram
 
 ### Game
 
-To create a new game write a class wich inherits from `Game`.
+To create a new game write a class which inherits from `Game`.
 
 ```python
 class MyGame(Game):
@@ -134,7 +134,7 @@ The `Switch` class is used to work with any binary input. It provides two functi
 - `on(seat: int)`
 - `off(seat: int)`
 
-wich are called when the putten is pressed and released respectively.
+which are called when the putten is pressed and released respectively.
 
 ```python
 class MySwitch():
@@ -149,7 +149,7 @@ class MySwitch():
 
 As the name implies, the `Joystick` class is used for inputs from one dimension of a joystick. It provides a method `get_direction(seat: int, pos: int)` which is called with a new joystick position between $$-1$$ and $$1$$.
 
-Additionally a constant `THRESHOLD` is given. With this value you can deside below wich value an input is recognized as zero.
+Additionally a constant `THRESHOLD` is given. With this value you can deside below which value an input is recognized as zero.
 
 ```python
 class MyJoystick()

@@ -1,6 +1,6 @@
 # Gamecontrol SDK
 
-The Gamecontrol is the center of the game. You can think of it like a referee. The Gamecontrol controls the game loop and decides wich player won. In order to achieve this, the module provides a `Game` class.
+The Gamecontrol is the center of the game. You can think of it like a referee. The Gamecontrol controls the game loop and decides which player won. In order to achieve this, the module provides a `Game` class.
 
 The `Game` class provides events depending on the game state as well as a method to change it.
 
@@ -22,7 +22,7 @@ classDiagram
 
 ## Create a game
 
-To create a new game write a class wich inherits from `Game`.
+To create a new game write a class which inherits from `Game`.
 
 ```python
 class MyGame(Game):

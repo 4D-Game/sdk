@@ -31,7 +31,7 @@ class Switch(Input):
         logging.info("Set switch %s to on", self.name)
 
     async def off(self, seat: int):
-        """"
+        """
             Called when switch is released
 
             Arguments:

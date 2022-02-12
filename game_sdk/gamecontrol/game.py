@@ -33,7 +33,7 @@ class Game(GameTemplate):
             Set `game_state` and execute the coresponding function
 
             Arguments:
-                state: State to wich to switch
+                state: State to which to switch
         """
 
         self._game_state = state

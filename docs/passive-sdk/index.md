@@ -1,8 +1,8 @@
 # Passive SDK
 
-The **passive sdk** is used for devices wich wont interact with game. Instead passive devices can be used to display the score or similar.
+The **passive sdk** is used for devices which wont interact with game. Instead passive devices can be used to display the score or similar.
 
-As the other modules the **passive sdk** provides a `Game` Class wich emits events debending on the game state.
+As the other modules the **passive sdk** provides a `Game` Class which emits events debending on the game state.
 
 ## Class structure
 
@@ -21,7 +21,7 @@ classDiagram
 
 ## Create a Game
 
-To create a new game write a class wich inherits from `Game`.
+To create a new game write a class which inherits from `Game`.
 
 ```python
 class MyGame(Game):
