@@ -36,7 +36,7 @@ All communication between different Devices is done with MQTT. The following str
 
 ### MQTT Structure
 
-![MQTT Structure](assets/mqtt_structure_dark.svg)
+![MQTT Structure](assets/mqtt_structure.svg)
 
 ## Class Structure
 
