@@ -552,7 +552,7 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="controller-sdk">Controller SDK</h1>
-<p>Controller are Raspberry Pi's wich control the game figures.</p>
+<p>Controller are Raspberry Pi's which control the game figures.</p>
 <p>This module provides a <code>Game</code> class for a controller. The class is used to emit events debending on the game loop. The class also listens on gamepad inputs.</p>
 <p>In addition the module provides a set of key maps for different gamepads.
 To work with gamepad inputs the <strong>controller sdk</strong> provides as set of input classes.</p>
@@ -628,7 +628,7 @@ To work with gamepad inputs the <strong>controller sdk</strong> provides as set 
 </div>
 <h2 id="create-a-game">Create a game</h2>
 <h3 id="game">Game</h3>
-<p>To create a new game write a class wich inherits from <code>Game</code>.</p>
+<p>To create a new game write a class which inherits from <code>Game</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">MyGame</span><span class="p">(</span><span class="n">Game</span><span class="p">):</span>
 </code></pre></div>
 <p>Now the methods:</p>
@@ -666,7 +666,7 @@ To work with gamepad inputs the <strong>controller sdk</strong> provides as set 
 <li><code>on(seat: int)</code></li>
 <li><code>off(seat: int)</code></li>
 </ul>
-<p>wich are called when the putten is pressed and released respectively.</p>
+<p>which are called when the putten is pressed and released respectively.</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">MySwitch</span><span class="p">():</span>
   <span class="k">async</span> <span class="k">def</span> <span class="nf">on</span><span class="p">(</span><span class="n">seat</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Button pressed"</span><span class="p">)</span>
@@ -676,7 +676,7 @@ To work with gamepad inputs the <strong>controller sdk</strong> provides as set 
 </code></pre></div>
 <h4 id="joystick">Joystick</h4>
 <p>As the name implies, the <code>Joystick</code> class is used for inputs from one dimension of a joystick. It provides a method <code>get_direction(seat: int, pos: int)</code> which is called with a new joystick position between $$-1$$ and $$1$$.</p>
-<p>Additionally a constant <code>THRESHOLD</code> is given. With this value you can deside below wich value an input is recognized as zero.</p>
+<p>Additionally a constant <code>THRESHOLD</code> is given. With this value you can deside below which value an input is recognized as zero.</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">MyJoystick</span><span class="p">()</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="n">seat</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">seat</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>

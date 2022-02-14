@@ -638,9 +638,9 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="4d-game-sdk">4D-Game SDK</h1>
-<p>The 4D-Game SDK allows you to create a physical Game wich can be controlled with a Gamepad over a Raspberry Pi. To create a game, every Player (Gamepad) gets it's own Raspberry Pi (<strong>Controller</strong>). The control of the Game is done by one Raspberry Pi called the <strong>Gamecontrol</strong>.</p>
+<p>The 4D-Game SDK allows you to create a physical Game which can be controlled with a Gamepad over a Raspberry Pi. To create a game, every Player (Gamepad) gets it's own Raspberry Pi (<strong>Controller</strong>). The control of the Game is done by one Raspberry Pi called the <strong>Gamecontrol</strong>.</p>
 <h2 id="gameloop">Gameloop</h2>
-<p>The course of every game can be described by a state machine called the gameloop. It is consisting of the <em>idle-</em>, <em>start-</em>, <em>run-</em> and _end-_States wich are controlled by the <strong>Gamecontrol</strong>.</p>
+<p>The course of every game can be described by a state machine called the gameloop. It is consisting of the <em>idle-</em>, <em>start-</em>, <em>run-</em> and _end-_States which are controlled by the <strong>Gamecontrol</strong>.</p>
 <div class="mermaid">stateDiagram-v2
     [*] --&gt; idle
     idle --&gt; start: when all ready
@@ -664,7 +664,7 @@
 <p>The setup of a MQTT Broker is needed to use the SDK</p>
 </div>
 <h3 id="mqtt-structure">MQTT Structure</h3>
-<p><img alt="MQTT Structure" src="assets/mqtt_structure_dark.svg"/></p>
+<p><img alt="MQTT Structure" src="assets/mqtt_structure.svg"/></p>
 <h2 id="class-structure">Class Structure</h2>
 <p>The 4D-Game SDK is based on the classes shown below. The structure is extended by the classes specifically used for controller, gamecontrol or passive devices. Those classes are explained in the coresponding section.</p>
 <div class="mermaid">classDiagram
